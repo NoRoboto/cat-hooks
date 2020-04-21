@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
 import Cat from './Cat';
+import CatBoddy from './CatBoddy';
 import catRequest from '../network/catRequest';
 
-export default class CatList extends Component {
+class CatList extends Component {
+  // TODO: use proptypes checker.
 
   state = {
-    catList: []
+    catList: [],
   }
 
   async componentDidMount () {
     const data = await catRequest(9);
 
     this.setState({catList: data});
+  }
+
+  async componentDidUpdate (prevProps, prevState) {
+    if (prevProps.requestId !== this.props.requestId) {
+      const data = await catRequest(9);
+      this.setState({catList: data});
+    }
   }
 
   render() {
@@ -22,3 +31,5 @@ export default class CatList extends Component {
     )
   }
 }
+
+export default CatBoddy(CatList);
