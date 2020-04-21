@@ -6,8 +6,11 @@ import catRequest from '../network/catRequest';
 class CatList extends Component {
   // TODO: use proptypes checker.
 
-  state = {
-    catList: [],
+  constructor(props) {
+    super(props);
+    this.state = {
+      catList: [],
+    } 
   }
 
   async componentDidMount () {
