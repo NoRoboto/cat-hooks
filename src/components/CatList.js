@@ -1,19 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import useGetCatsData from '../components/hooks/getCatsData';
 import Cat from './Cat';
-import catRequest from "../network/catRequest";
 
 function CatList() {
-  const [catData, setCatData] = useState([]);
   const [requestId, setRequestId] = useState(0);
-
-  useEffect(() => {
-    fetchCats();
-  }, [requestId]);
-
-  async function fetchCats () {
-    const data = await catRequest(10);
-    setCatData(data);
-  }
+  const catData = useGetCatsData(requestId, 10);
 
   // fetch more cats
   const onClick = (ev) => {
