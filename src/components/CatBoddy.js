@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import catRequest from "../network/catRequest";
 
 export default (CatParts) =>
+// TODO: move to custom HOOK
   class CatBoddy extends Component {
     state = {
       catList: [],
