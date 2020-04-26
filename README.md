@@ -1,3 +1,21 @@
+<h1 align="center"> Cat hooks </h1> <br>
+<p align="center">
+  <img alt="header" title="header" src="https://github.com/NoRoboto/cat-hooks/blob/master/public/project-coverjpg" width="450">
+</p>
+
+## Introduction
+
+An step-by-step explanation to understand Hooks in a quick and easy way using the cats API. (https://thecatapi.com/)
+
+- React hooks explained part 1 https://slides.com/danieldiazgiraldo/deck-b5f7b6
+
+## Requirements
+
+- Paste your api key on `src/network/apiKey.js` (need to be created) :
+`export default "example-api-key"` 
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
