@@ -11,7 +11,7 @@ A step-by-step explanation to understand Hooks in a quick and easy way using the
 
 ## Requirements
 
-- Paste your api key on `src/network/apiKey.js` (need to be created) :
+- Paste your api key on `src/network/apiKey.js`:
 `export default "example-api-key"` 
 
 ---
