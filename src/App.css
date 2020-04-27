@@ -42,6 +42,10 @@ body {
   grid-gap: 10px;
 }
 
+.img-container {
+  position: relative;
+}
+
 .img {
   width: 300px;
   height: 300px;
@@ -64,6 +68,24 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.btn-list {
+  display: flex;
+  flex-direction: row;
+}
+
+.delete-btn {
+  cursor: pointer;
+  background-color: #e74c3c;
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 2px 5px;
+  position: absolute;
+  left: 0;
+  transition: opacity 0.3s ease;
 }
 
 @media (min-width: 620px) {
