@@ -5,8 +5,6 @@ export default function Cat({ url }) {
   const { deleteCat } = useContext(GlobalContext);
   const [mouseEvent, setMouseEvent] = useState("");
 
-  useDebugValue(mouseEvent);
-
   return (
     <div
       className="img-container"

@@ -1,4 +1,4 @@
-import { useEffect, useContext } from 'react';
+import { useEffect, useContext, useDebugValue } from 'react';
 import catRequest from "../network/catRequest";
 import { GlobalContext } from '../context/GlobalState';
 
@@ -14,6 +14,8 @@ export default function useGetCatsData (requestId, catNumber) {
 
     fetchCats(data);
   }
+
+  useDebugValue(cats.length === 0 ? 'Empty cat data' : 'Already fetched cat data');
 
   return cats;
 }
