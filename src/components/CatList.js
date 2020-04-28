@@ -1,25 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Cat from './Cat';
 import catRequest from "../network/catRequest";
 
-function CatList() {
+function CatList({numberOfCats}) {
   const [catData, setCatData] = useState([]);
-  const [requestId, setRequestId] = useState(0);
 
-  useEffect(() => {
-    fetchCats();
-  }, [requestId]);
-
-  async function fetchCats () {
-    const data = await catRequest(10);
+  const fetchCats = useCallback(async () => {
+    const data = await catRequest(numberOfCats);
     setCatData(data);
-  }
+  }, [numberOfCats]);
 
   // fetch more cats
   const onClick = (ev) => {
-    const requestId = Math.random().toString(25).substring(10);
-    setRequestId(requestId);
+    fetchCats();
   }
+
+  useEffect(() => {
+    fetchCats();
+  }, [fetchCats]);
 
   return (
     <div className="list">      

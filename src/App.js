@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <CatHeader text={headerText} url={headerImg} />
-      <CatList />
+      <CatList numberOfCats={10} />
     </div>
   );
 }
