@@ -1,13 +1,14 @@
 import React, { useState, useContext } from 'react';
 import useGetCatsData from '../hooks/getCatsData';
 import Cat from './Cat';
+import CatTail from './CatTail';
 import catRequest from "../network/catRequest";
 import { GlobalContext } from '../context/GlobalState';
 
 function CatList() {
   const { addCat } = useContext(GlobalContext);
   const [requestId, setRequestId] = useState(0);
-  const catData = useGetCatsData(requestId, 10);
+  const catData = useGetCatsData(requestId, 2);
 
   const resetCats = (ev) => {
     const requestId = Math.random().toString(25).substring(10);
@@ -31,6 +32,7 @@ function CatList() {
       <section className='wrapper'>
         {catData.map(cat => <Cat key={cat.id} url={cat.url} />)}
       </section>
+      <CatTail />
     </div>
   );
 }
