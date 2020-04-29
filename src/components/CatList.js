@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useMemo } from 'react';
 import useGetCatsData from '../hooks/getCatsData';
 import Cat from './Cat';
 import CatTail from './CatTail';
@@ -21,6 +21,10 @@ function CatList() {
     addCat(data[0]);
   }
 
+  const memoElement = useMemo(() => {
+    return <CatTail />;
+  }, [catData.length]);
+
   return (
     <div className="list">      
       <button className="btn" onClick={resetCats}>
@@ -32,7 +36,7 @@ function CatList() {
       <section className='wrapper'>
         {catData.map(cat => <Cat key={cat.id} url={cat.url} />)}
       </section>
-      <CatTail />
+      {memoElement}
     </div>
   );
 }
