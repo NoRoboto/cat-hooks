@@ -8,6 +8,7 @@
 A step-by-step explanation to understand Hooks in a quick and easy way using the cats API. (https://thecatapi.com/)
 
 - React hooks explained part 1 https://slides.com/danieldiazgiraldo/deck-b5f7b6
+- React hooks explained part 2 https://slides.com/danieldiazgiraldo/reack-hooks-part-1#/ (yes the links says that (but it is part 2, i swear)
 
 ## Requirements
 
